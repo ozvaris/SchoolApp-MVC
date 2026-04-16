@@ -13,7 +13,7 @@ public class StudentUpdateDto
 
     [Required]
     [StringLength(100)]
-    public string StudentSurname { get; set; } = string.Empty;
+    public string StudentSurename { get; set; } = string.Empty;
 
     [Required]
     [StringLength(200)]

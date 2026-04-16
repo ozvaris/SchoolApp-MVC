@@ -38,7 +38,7 @@ public class StudentService : IStudentService
         var student = new Student
         {
             StudentName = dto.StudentName.Trim(),
-            StudentSurname = dto.StudentSurname.Trim(),
+            StudentSurename = dto.StudentSurename.Trim(),
             StudentEmail = normalizedEmail
         };
 
@@ -62,7 +62,7 @@ public class StudentService : IStudentService
         }
 
         existingStudent.StudentName = dto.StudentName.Trim();
-        existingStudent.StudentSurname = dto.StudentSurname.Trim();
+        existingStudent.StudentSurename = dto.StudentSurename.Trim();
         existingStudent.StudentEmail = normalizedEmail;
 
         var updated = await _repository.UpdateAsync(existingStudent);
@@ -80,7 +80,7 @@ public class StudentService : IStudentService
         {
             StudentID = student.StudentID,
             StudentName = student.StudentName,
-            StudentSurname = student.StudentSurname,
+            StudentSurename = student.StudentSurename,
             StudentEmail = student.StudentEmail
         };
     }

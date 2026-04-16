@@ -11,4 +11,10 @@
     <ProjectReference Include="..\SchoolApp-DAL\SchoolApp-DAL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

@@ -4,7 +4,7 @@
     {
         public int StudentID { get; set; }
         public string StudentName { get; set; } = string.Empty;
-        public string StudentSurname { get; set; } = string.Empty;
+        public string StudentSurename { get; set; } = string.Empty;
         public string StudentEmail { get; set; } = string.Empty;
 
         public static Student RegisterFromConsole()
@@ -22,7 +22,7 @@
             }
 
             Console.WriteLine("Enter Student Surname (optional):");
-            var studentSurname = Console.ReadLine() ?? string.Empty;
+            var StudentSurename = Console.ReadLine() ?? string.Empty;
 
             Console.WriteLine("Enter Student Email (optional):");
             var studentEmail = Console.ReadLine() ?? string.Empty;
@@ -30,7 +30,7 @@
             return new Student
             {
                 StudentName = studentName.Trim(),
-                StudentSurname = studentSurname.Trim(),
+                StudentSurename = StudentSurename.Trim(),
                 StudentEmail = studentEmail.Trim()
             };
         }
@@ -39,7 +39,7 @@
         {
             Console.WriteLine($"Student ID: {StudentID}");
             Console.WriteLine($"Student Name: {StudentName}");
-            Console.WriteLine($"Student Surname: {StudentSurname}");
+            Console.WriteLine($"Student Surname: {StudentSurename}");
             Console.WriteLine($"Student Email: {StudentEmail}");
         }
     }
