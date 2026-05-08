@@ -20,7 +20,7 @@ namespace Console_Student_Class_01
             var dbStudent = new SchoolApp_DAL.Models.Student
             {
                 StudentName = student.StudentName,
-                StudentSurename = student.StudentSurename,
+                StudentSurname = student.StudentSurname,
                 StudentEmail = student.StudentEmail
             };
 
@@ -54,7 +54,7 @@ namespace Console_Student_Class_01
 
             Console.WriteLine($"Student ID: {student.StudentID}");
             Console.WriteLine($"Student Name: {student.StudentName}");
-            Console.WriteLine($"Student Surname: {student.StudentSurename}");
+            Console.WriteLine($"Student Surname: {student.StudentSurname}");
             Console.WriteLine($"Student Email: {student.StudentEmail}");
         }
 
@@ -77,7 +77,7 @@ namespace Console_Student_Class_01
 
             Console.WriteLine($"Student ID: {student.StudentID}");
             Console.WriteLine($"Student Name: {student.StudentName}");
-            Console.WriteLine($"Student Surname: {student.StudentSurename}");
+            Console.WriteLine($"Student Surname: {student.StudentSurname}");
             Console.WriteLine($"Student Email: {student.StudentEmail}");
         }
     }

@@ -10,7 +10,7 @@ public class StudentCreateDto
 
     [Required]
     [StringLength(100)]
-    public string StudentSurename { get; set; } = string.Empty;
+    public string StudentSurname { get; set; } = string.Empty;
 
     [Required]
     [StringLength(200)]

@@ -67,7 +67,7 @@ public class StudentsController : Controller
         {
             StudentID = student.StudentID,
             StudentName = student.StudentName,
-            StudentSurename = student.StudentSurename,
+            StudentSurname = student.StudentSurname,
             StudentEmail = student.StudentEmail
         };
 

@@ -47,7 +47,7 @@ namespace Console_Student_Class_01
                     {
                         var student = Student.RegisterFromConsole();
                         await studentService.RegisterStudentAsync(student);
-                        Console.WriteLine($"Student Registered: {student.StudentName} {student.StudentSurename} (ID: {student.StudentID})");
+                        Console.WriteLine($"Student Registered: {student.StudentName} {student.StudentSurname} (ID: {student.StudentID})");
                     }
                     else if (userChoice == "2")
                     {

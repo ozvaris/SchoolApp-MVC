@@ -19,7 +19,7 @@ public class StudentRepository : IStudentRepository
     {
         var students = new List<Student>();
         const string sql = """
-                           SELECT StudentID, StudentName, StudentSurename, StudentEmail
+                           SELECT StudentID, StudentName, StudentSurname, StudentEmail
                            FROM dbo.Student
                            ORDER BY StudentID;
                            """;
@@ -40,7 +40,7 @@ public class StudentRepository : IStudentRepository
     public async Task<Student?> GetByIdAsync(int id)
     {
         const string sql = """
-                           SELECT StudentID, StudentName, StudentSurename, StudentEmail
+                           SELECT StudentID, StudentName, StudentSurname, StudentEmail
                            FROM dbo.Student
                            WHERE StudentID = @StudentID;
                            """;
@@ -58,7 +58,7 @@ public class StudentRepository : IStudentRepository
     public async Task<Student?> GetByNameAsync(string studentName)
     {
         const string sql = """
-                           SELECT TOP(1) StudentID, StudentName, StudentSurename, StudentEmail
+                           SELECT TOP(1) StudentID, StudentName, StudentSurname, StudentEmail
                            FROM dbo.Student
                            WHERE StudentName = @StudentName
                            ORDER BY StudentID;
@@ -77,7 +77,7 @@ public class StudentRepository : IStudentRepository
     public async Task<Student?> GetByEmailAsync(string studentEmail)
     {
         const string sql = """
-                           SELECT TOP(1) StudentID, StudentName, StudentSurename, StudentEmail
+                           SELECT TOP(1) StudentID, StudentName, StudentSurname, StudentEmail
                            FROM dbo.Student
                            WHERE StudentEmail = @StudentEmail
                            ORDER BY StudentID;
@@ -96,15 +96,15 @@ public class StudentRepository : IStudentRepository
     public async Task<int> CreateAsync(Student student)
     {
         const string sql = """
-                           INSERT INTO dbo.Student (StudentName, StudentSurename, StudentEmail)
-                           VALUES (@StudentName, @StudentSurename, @StudentEmail);
+                           INSERT INTO dbo.Student (StudentName, StudentSurname, StudentEmail)
+                           VALUES (@StudentName, @StudentSurname, @StudentEmail);
                            SELECT CAST(SCOPE_IDENTITY() AS INT);
                            """;
 
         await using var connection = new SqlConnection(_connectionString);
         await using var command = new SqlCommand(sql, connection);
         command.Parameters.AddWithValue("@StudentName", student.StudentName);
-        command.Parameters.AddWithValue("@StudentSurename", student.StudentSurename);
+        command.Parameters.AddWithValue("@StudentSurname", student.StudentSurname);
         command.Parameters.AddWithValue("@StudentEmail", student.StudentEmail);
 
         await connection.OpenAsync();
@@ -117,7 +117,7 @@ public class StudentRepository : IStudentRepository
         const string sql = """
                            UPDATE dbo.Student
                            SET StudentName = @StudentName,
-                               StudentSurename = @StudentSurename,
+                               StudentSurname = @StudentSurname,
                                StudentEmail = @StudentEmail
                            WHERE StudentID = @StudentID;
                            """;
@@ -126,7 +126,7 @@ public class StudentRepository : IStudentRepository
         await using var command = new SqlCommand(sql, connection);
         command.Parameters.AddWithValue("@StudentID", student.StudentID);
         command.Parameters.AddWithValue("@StudentName", student.StudentName);
-        command.Parameters.AddWithValue("@StudentSurename", student.StudentSurename);
+        command.Parameters.AddWithValue("@StudentSurname", student.StudentSurname);
         command.Parameters.AddWithValue("@StudentEmail", student.StudentEmail);
 
         await connection.OpenAsync();
@@ -156,7 +156,7 @@ public class StudentRepository : IStudentRepository
         {
             StudentID = reader.GetInt32(reader.GetOrdinal("StudentID")),
             StudentName = reader.GetString(reader.GetOrdinal("StudentName")),
-            StudentSurename = reader.GetString(reader.GetOrdinal("StudentSurename")),
+            StudentSurname = reader.GetString(reader.GetOrdinal("StudentSurname")),
             StudentEmail = reader.GetString(reader.GetOrdinal("StudentEmail"))
         };
     }
