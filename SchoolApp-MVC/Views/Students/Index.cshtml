@@ -45,7 +45,10 @@
                 <td>
                     <a asp-action="Details" asp-route-id="@student.StudentID" class="btn btn-sm btn-outline-info">Details</a>
                     <a asp-action="Edit" asp-route-id="@student.StudentID" class="btn btn-sm btn-outline-warning">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@student.StudentID" class="btn btn-sm btn-outline-danger">Delete</a>
+                    <a asp-action="Delete"
+                       asp-route-id="@student.StudentID"
+                       class="btn btn-sm btn-outline-danger"
+                       onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>
                 </td>
             </tr>
         }
